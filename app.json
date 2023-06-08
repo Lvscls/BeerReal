@@ -1,8 +1,13 @@
 {
   "expo": {
     "name": "NativeReact",
-    "slug": "NativeReact",
+    "slug": "labinouze",
     "version": "1.0.0",
+    "notification": {
+      "icon": "./img/notification-icon.png",
+      "color": "#ffffff",
+      "androidMode": "default"
+    },
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -19,12 +24,21 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./img/notification-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "NOTIFICATIONS"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "189accd1-5e23-4aaa-9809-5272dae6b35e"
+      }
+    },
+    "owner": "lvscls"
   }
 }

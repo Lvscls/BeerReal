@@ -1,0 +1,104 @@
+{
+  "beers": [
+    {
+      "name": "Leffe Blonde",
+      "description": "Une bière blonde belge avec des notes de fruits et d'épices.",
+      "alcoholPercentage": 6.6,
+      "prices": {
+        "25cl": 3.0,
+        "33cl": 3.5,
+        "50cl": 4.5
+      }
+    },
+    {
+      "name": "Chimay Bleue",
+      "description": "Une bière trappiste belge brune, riche et complexe avec des arômes de fruits mûrs et de caramel.",
+      "alcoholPercentage": 9.0,
+      "prices": {
+        "25cl": 4.5,
+        "33cl": 5.0,
+        "50cl": 7.0
+      }
+    },
+    {
+      "name": "Duvel",
+      "description": "Une bière belge forte et épicée avec une légère amertume.",
+      "alcoholPercentage": 8.5,
+      "prices": {
+        "25cl": 3.5,
+        "33cl": 4.0,
+        "50cl": 5.5
+      }
+    },
+    {
+      "name": "Guinness Draught",
+      "description": "Une célèbre bière irlandaise brune et crémeuse avec des saveurs de café et de chocolat.",
+      "alcoholPercentage": 4.2,
+      "prices": {
+        "25cl": 3.0,
+        "33cl": 3.5,
+        "50cl": 4.5
+      }
+    },
+    {
+      "name": "Stella Artois",
+      "description": "Une bière blonde belge légère et rafraîchissante avec une légère amertume.",
+      "alcoholPercentage": 5.0,
+      "prices": {
+        "25cl": 2.5,
+        "33cl": 3.0,
+        "50cl": 4.0
+      }
+    },
+    {
+      "name": "Hoegaarden",
+      "description": "Une bière belge blanche légère et épicée avec des arômes d'orange et de coriandre.",
+      "alcoholPercentage": 4.9,
+      "prices": {
+        "25cl": 3.0,
+        "33cl": 3.5,
+        "50cl": 4.5
+      }
+    },
+    {
+      "name": "Heineken",
+      "description": "Une bière blonde hollandaise légère et rafraîchissante avec une amertume subtile.",
+      "alcoholPercentage": 5.0,
+      "prices": {
+        "25cl": 2.5,
+        "33cl": 3.0,
+        "50cl": 4.0
+      }
+    },
+    {
+      "name": "Corona Extra",
+      "description": "Une bière mexicaine légère et rafraîchissante avec une touche de citron.",
+      "alcoholPercentage": 4.6,
+      "prices": {
+        "25cl": 2.5,
+        "33cl": 3.0,
+        "50cl": 4.0
+      }
+    },
+    {
+      "name": "Pilsner Urquell",
+      "description": "Une bière tchèque dorée et légèrement amère avec un goût de malt distinctif.",
+      "alcoholPercentage": 4.4,
+      "prices": {
+        "25cl": 3.0,
+        "33cl": 3.5,
+        "50cl": 4.5
+      }
+    },
+    {
+      "name": "Tripel Karmeliet",
+      "description": "Une bière belge dorée et complexe avec des arômes de fruits tropicaux et de vanille.",
+      "alcoholPercentage": 8.4,
+      "prices": {
+        "25cl": 4.5,
+        "33cl": 5.0,
+        "50cl": 7.0
+      }
+    }
+  ]
+}
