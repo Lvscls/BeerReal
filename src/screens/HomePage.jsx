@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -20,15 +20,28 @@ const HomePage = () => {
   const [countdown, setCountdown] = useState(30);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [randomBeerName, setRandomBeerName] = useState("");
+
   useEffect(() => {
-    scheduleNotification();
+    registerForPushNotifications();
   }, []);
 
-  const scheduleNotification = async () => {
-    // Demander la permission d'envoyer des notifications
-    await Notifications.requestPermissionsAsync();
+  const registerForPushNotifications = async () => {
+    // Vérifier les permissions de notification
+    const { status } = await Notifications.requestPermissionsAsync();
+    if (status !== "granted") {
+      console.log("Permission de notification refusée");
+      return;
+    }
 
-    // Planifier une notification récurrente toutes les 30 secondes
+    // Gérer l'appui sur la notification
+    Notifications.addNotificationResponseReceivedListener(
+      handleNotificationPress
+    );
+
+    scheduleNotification();
+  };
+
+  const scheduleNotification = () => {
     Notifications.setNotificationHandler({
       handleNotification: async () => ({
         shouldShowAlert: true,
@@ -40,16 +53,18 @@ const HomePage = () => {
     Notifications.scheduleNotificationAsync({
       content: {
         title: "C'est l'heure du BeerReal 🍻",
-        body: "Prends toi et ta bière en photo !",
+        body: "Prends en photo ta bière ! 🍺",
       },
       trigger: {
-        seconds: 6000, // Envoyer la notification toutes les 30 secondes
+        seconds: 600, // Envoyer la notification toutes les 10 minutes
         repeats: true, // Répéter la notification
       },
-      onPress: () => {
-        navigation.navigate("TakeBeerReal");
-      },
     });
+  };
+
+  const handleNotificationPress = () => {
+    navigation.navigate("TakeBeerReal"); // Naviguer vers la page "TakeBeerReal"
+    console.log("Notification appuyée");
   };
 
   useEffect(() => {
@@ -68,6 +83,7 @@ const HomePage = () => {
   const navigateToBeerList = () => {
     navigation.navigate("BeerList");
   };
+
   const handleRandomBeer = () => {
     if (isRandomBeerEnabled) {
       setIsRandomBeerEnabled(false);
@@ -151,12 +167,6 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
-  },
-  logo: {
-    width: 200,
-    height: 200,
-    position: "absolute",
-    top: -200,
   },
   contentContainer: {
     alignItems: "center",
@@ -252,4 +262,3 @@ const styles = StyleSheet.create({
 });
 
 export default HomePage;
-
