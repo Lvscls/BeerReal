@@ -28,7 +28,7 @@
         "backgroundColor": "#ffffff"
       },
       "permissions": [
-        "NOTIFICATIONS"
+        "NOTIFICATIONS","CAMERA", "WRITE_EXTERNAL_STORAGE","MEDIA_LIBRARY_WRITE_ONLY"
       ]
     },
     "web": {
